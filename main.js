@@ -58,9 +58,7 @@ addBtn.addEventListener('click', () => {
 function removeBook(bookID) {
   const getBooKs = localStorage.getItem('books');
   booksList = JSON.parse(getBooKs);
-  const booksVar = booksList.filter((book) => (
-    book.id !== bookID)
-  );
+  const booksVar = booksList.filter((book) => (book.id !== bookID));
   booksList = [...booksVar];
   localStorage.setItem('books', JSON.stringify(booksList));
   displayBooks();
