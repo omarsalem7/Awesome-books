@@ -39,11 +39,10 @@ function addBook(book) {
 
 const addBtn = document.querySelector('.add-btn');
 addBtn.addEventListener('click', () => {
-  const random = Math.floor(Math.random() * 100000) + 2;
+  const id = Math.floor(Math.random() * 100000) + 1;
   const title = document.querySelector('.input-title').value.trim();
   const author = document.querySelector('.input-author').value.trim();
-  const newBook = { random, author, title };
-
+  const newBook = { id, author, title };
   const getBooks = localStorage.getItem('books');
   if (getBooks === null) {
     booksList = [];
@@ -58,7 +57,7 @@ addBtn.addEventListener('click', () => {
 function removeBook(bookID) {
   const getBooKs = localStorage.getItem('books');
   booksList = JSON.parse(getBooKs);
-  const booksVar = booksList.filter((book) => (book.id !== bookID));
+  const booksVar = booksList.filter((book) => book.id !== bookID);
   booksList = [...booksVar];
   localStorage.setItem('books', JSON.stringify(booksList));
   displayBooks();
