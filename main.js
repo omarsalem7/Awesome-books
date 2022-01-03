@@ -1,4 +1,4 @@
-const booksList = [
+let booksList = [
   {
     id: 0,
     author: "Benjamin Semah",
@@ -22,7 +22,7 @@ function create() {
       `<li class="book-item">
         <p class="book-title">${book.title}</p>
         <p class="book-author">${book.author}</p>
-        <button class="remove-btn" type="button">Remove</button>
+        <button onclick="removeBook(${book.id})" class="remove-btn" type="button">Remove</button>
         <hr>
       </li>
       `
@@ -47,7 +47,25 @@ function addBook(book) {
   booksList.push(book);
   // add book to Dom
   create();
+  clearText();
 }
 
+function clearText(){
+  document.querySelector(".input-title").value = "";
+  document.querySelector(".input-author").value = "";
+
+};
+
+
+
+// Function to Remove Book
+
+function removeBook(bookID) {
+  const booksVar = booksList.filter(book => book.id !== bookID)
+  console.log(booksVar);
+  booksList=[...booksVar]
+  console.log(booksList)
+  create();
+}
 
 
