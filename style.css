@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.books-header {
+  margin-bottom: 15px;
+}
+
+.books-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.add-books input {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.book-item {
+  list-style: none;
+  padding-top: 15px;
+}
+
+.remove-btn {
+  margin-bottom: 15px;
+}
+
+.add-books {
+  margin-top: 15px;
+}
