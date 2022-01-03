@@ -8,7 +8,7 @@ function displayBooks() {
     booksList = JSON.parse(getBooks);
   }
   const books = document.querySelector('.books');
-  let booksHtml = ``;
+  let booksHtml = '';
   booksList.forEach((book) => {
     booksHtml += `<li class="book-item">
         <p class="book-title">${book.title}</p>
@@ -42,7 +42,7 @@ addBtn.addEventListener('click', () => {
   const random = Math.floor(Math.random() * 100000) + 2;
   const title = document.querySelector('.input-title').value.trim();
   const author = document.querySelector('.input-author').value.trim();
-  const newBook = { id: random, author: author, title: title };
+  const newBook = { random, author, title };
 
   const getBooks = localStorage.getItem('books');
   if (getBooks === null) {
@@ -54,10 +54,13 @@ addBtn.addEventListener('click', () => {
 });
 
 // Function to Remove Book
+// eslint-disable-next-line
 function removeBook(bookID) {
-  let getBooKs = localStorage.getItem('books');
+  const getBooKs = localStorage.getItem('books');
   booksList = JSON.parse(getBooKs);
-  const booksVar = booksList.filter((book) => { book.id !== bookID });
+  const booksVar = booksList.filter((book) => {
+    return book.id !== bookID;
+  });
   booksList = [...booksVar];
   localStorage.setItem('books', JSON.stringify(booksList));
   displayBooks();
