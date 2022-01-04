@@ -51,7 +51,6 @@ hr {
 }
 
 .add-books {
-  margin-top: 15px;
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -77,6 +76,10 @@ hr {
   display: flex;
   justify-content: center;
   margin-right: -9px;
+}
+
+.book-input {
+  width: 100%;
 }
 
 .btn-add {
