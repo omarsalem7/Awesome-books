@@ -7,29 +7,35 @@ class Book {
 
   addBook() {
     const books = document.querySelector('.books');
-    let booksHtml = '';
-    booksHtml = `<li id="${this.id}" class="book-item">
+    const listItem = document.createElement('li');
+    listItem.id = `${this.id}`;
+    listItem.className = 'book-item';
+    const booksHtml = `
+        <div class="book-info">
           <p class="book-title">${this.title}</p>
+          <p class="book-by">by</p>
           <p class="book-author">${this.author}</p>
+        </div>
           <button class="remove-btn" type="button">Remove</button>
-          <hr>
-        </li>
         `;
-    books.innerHTML += booksHtml;
 
+    listItem.innerHTML += booksHtml;
+    books.append(listItem);
     const newBookData = {
       id: this.id,
-      author: this.author,
       title: this.title,
+      author: this.author,
     };
     const getBooks = JSON.parse(localStorage.getItem('getBooks'));
     getBooks.push(newBookData);
     localStorage.setItem('getBooks', JSON.stringify(getBooks));
-    console.log(books.querySelector('.remove-btn'))
-    books.querySelector('.remove-btn').addEventListener('click', () => {
+    listItem.querySelector('.remove-btn').addEventListener('click', () => {
       this.removeBook();
-    })
+    });
+    document.querySelector('.input-title').value = '';
+    document.querySelector('.input-author').value = '';
   }
+
 
   removeBook() {
     const removedBook = document.querySelector('#${this.id}');
