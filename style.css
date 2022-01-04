@@ -4,30 +4,99 @@
 }
 
 .books-header {
-  margin-bottom: 15px;
+  margin: 15px;
+  text-align: center;
+}
+
+.books {
+  border: 2px solid rgb(90, 86, 86);
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+hr {
+  display: none;
 }
 
 .books-container {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.book-item {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 2px 8px;
+}
+
+.book-item:nth-child(even) {
+  background-color: rgb(230, 230, 230);
+}
+
+.book-info {
+  display: flex;
+}
+
+.book-by {
+  padding: 0 6px;
+}
+
+.remove-btn {
+  padding: 2px;
+}
+
+.add-books {
   display: flex;
   flex-direction: column;
   width: 50%;
   margin: 0 auto;
 }
 
-.add-books input {
-  display: block;
-  margin-bottom: 15px;
+.input-title,
+.input-author {
+  margin-bottom: 10px;
+  border: 2px solid rgb(73, 71, 71);
+  padding: 2px;
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.book-item {
-  list-style: none;
-  padding-top: 15px;
+.add-btn {
+  padding: 2px 5px;
+  border: 2px solid rgb(61, 58, 58);
+  margin-bottom: 20px;
+  width: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-right: -9px;
 }
 
-.remove-btn {
-  margin-bottom: 15px;
+.book-input {
+  width: 100%;
 }
 
-.add-books {
+.btn-add {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#add-new-books {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.line-books {
+  border-bottom: 2px solid #413c3c;
   margin-top: 15px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
