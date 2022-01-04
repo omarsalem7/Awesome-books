@@ -8,10 +8,10 @@ class Book {
   addBook() {
     const books = document.querySelector('.books');
     let booksHtml = '';
-    booksHtml = `<li class="book-item">
+    booksHtml = `<li id="${this.id}" class="book-item">
           <p class="book-title">${this.title}</p>
           <p class="book-author">${this.author}</p>
-          <button onclick="removeBook(${this.id})" class="remove-btn" type="button">Remove</button>
+          <button class="remove-btn" type="button">Remove</button>
           <hr>
         </li>
         `;
@@ -25,9 +25,19 @@ class Book {
     const getBooks = JSON.parse(localStorage.getItem('getBooks'));
     getBooks.push(newBookData);
     localStorage.setItem('getBooks', JSON.stringify(getBooks));
+    console.log(books.querySelector('.remove-btn'))
+    books.querySelector('.remove-btn').addEventListener('click', () => {
+      this.removeBook();
+    })
   }
 
-  removeBook() {}
+  removeBook() {
+    const removedBook = document.querySelector('#${this.id}');
+    removedBook.remove();
+    let getBooks = localStorage.getItem('getBooks');
+    getBooks = getBooks.filter(book => book.id !== this.id);
+    localStorage.setItem('getBooks', JSON.stringify(getBooks));
+  }
 }
 
 function displayBooks() {
