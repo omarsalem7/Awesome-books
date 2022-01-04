@@ -1,5 +1,64 @@
-let booksList = [];
+class Book {
+  constructor(id, title, author) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
+  }
 
+  addBook() {
+    const books = document.querySelector('.books');
+    let booksHtml = '';
+    booksHtml = `<li class="book-item">
+          <p class="book-title">${this.title}</p>
+          <p class="book-author">${this.author}</p>
+          <button onclick="removeBook(${this.id})" class="remove-btn" type="button">Remove</button>
+          <hr>
+        </li>
+        `;
+    books.innerHTML += booksHtml;
+
+    const newBookData = {
+      id: this.id,
+      author: this.author,
+      title: this.title,
+    };
+    const getBooks = JSON.parse(localStorage.getItem('getBooks'));
+    getBooks.push(newBookData);
+    localStorage.setItem('getBooks', JSON.stringify(getBooks));
+  }
+
+  removeBook() {}
+}
+
+function displayBooks() {
+  let getBooks = localStorage.getItem('getBooks');
+  if (getBooks === null) {
+    getBooks = [];
+  } else {
+    getBooks = JSON.parse(getBooks);
+  }
+  console.log(getBooks);
+  if (getBooks) {
+    getBooks.forEach((book) => {
+      console.count('hello');
+      const myBook = new Book(book.id, book.author, book.title);
+      myBook.addBook();
+    });
+  }
+  localStorage.setItem('getBooks', JSON.stringify(getBooks));
+
+  const addBtn = document.querySelector('.add-btn');
+  addBtn.addEventListener('click', () => {
+    const id = Math.floor(Math.random() * 100000) + 1;
+    const title = document.querySelector('.input-title').value.trim();
+    const author = document.querySelector('.input-author').value.trim();
+    const newBook = new Book(id, title, author);
+    newBook.addBook();
+  });
+}
+displayBooks();
+
+/*
 function displayBooks() {
   const getBooks = localStorage.getItem('books');
   if (getBooks === null) {
@@ -62,3 +121,4 @@ function removeBook(bookID) {
   localStorage.setItem('books', JSON.stringify(booksList));
   displayBooks();
 }
+*/
