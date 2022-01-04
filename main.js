@@ -30,7 +30,7 @@ function clearText() {
 
 // add book functionality
 function addBook(book) {
-  booksList.push(book);
+  booksList.unshift(book);
   clearText();
   localStorage.setItem('books', JSON.stringify(booksList));
   // add book to Dom
