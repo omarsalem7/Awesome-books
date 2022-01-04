@@ -10,8 +10,7 @@ class Book {
     const listItem = document.createElement('li');
     listItem.id = `${this.id}`;
     listItem.className = 'book-item';
-    const booksHtml = `
-         <div class="book-info">
+    const booksHtml = ` <div class="book-info">
           <p class="book-title">${this.title}</p>
           <p class="book-by">by</p>
           <p class="book-author">${this.author}</p>
