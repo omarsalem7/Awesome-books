@@ -2,6 +2,23 @@
   margin: 0;
   padding: 0;
 }
+.project-wraper {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  padding: 6px 8px 8px 8px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
 
 .books-header {
   margin: 15px;
@@ -19,10 +36,10 @@ hr {
   display: none;
 }
 
-.books-container {
+.books-form {
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 80%;
   margin: 0 auto;
 }
 
