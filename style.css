@@ -20,6 +20,10 @@
   gap: 10px;
 }
 
+.line-seperator {
+  border-right: 2px solid rgb(112, 110, 110);
+}
+
 .books-header {
   margin: 15px;
   text-align: center;
@@ -116,4 +120,30 @@ hr {
   width: 100px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.contact-info {
+  padding: 30px 0;
+}
+
+.contact-heading {
+  font-weight: 600;
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact-brief {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-list {
+  padding-left: 70px;
+}
+
+footer {
+  border: 2px solid black;
+  padding: 5px 0 5px 10px;
+  width: 100%;
 }
