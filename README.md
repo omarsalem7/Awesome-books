@@ -11,7 +11,9 @@
 - HTML
 - CSS
 - JavaScript
+- LocalStorage
 - Linters
+
 
 ## Authors
 
