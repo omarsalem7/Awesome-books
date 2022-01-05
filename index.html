@@ -10,20 +10,52 @@
 </head>
 
 <body>
-    <div class="books-container">
-        <h1 class="books-header">All Awesome Books</h1>
-        <ul class="books">
-            <!-- Books generated Dynamically with JavaScript -->
-        </ul>
-        <div class="line-books"></div>
-        <h3 id="add-new-books">Add a new book</h3>
-        <div class="add-books">
-            <input class="book-input input-title" type="text" placeholder="Title" />
-            <input class="book-input input-author" type="text" placeholder="Author" />
-            <div class="btn-add">
-                <button class="add-btn" type="button">Add</button>
-            </div>
+    <div class="project-wraper">
+        <nav class="navbar">
+            <span>Awesome Books</span>
+            <ul class="nav-list">
+                <li class="nav-list-item"><a>List</a></li>
+                <li class="line-seperator"></li>
+                <li class="nav-list-item"><a>Add New</a></li>
+                <li class=" line-seperator"></li>
+                <li class="nav-list-item"><a>Contact</a></li>
+            </ul>
+        </nav>
+        <section class="books-wraper">
+            <h1 class="books-header">All Awesome Books</h1>
+            <ul class="books">
+                <!-- Books generated Dynamically with JavaScript -->
+            </ul>
+        </section>
+        <div class="books-form">
+            <h1 id="add-new-books">Add a new book</h1>
+            <form class="add-books">
+                <input class="book-input input-title" type="text" placeholder="Title" />
+                <input class="book-input input-author" type="text" placeholder="Author" />
+                <div class="btn-add">
+                    <button class="add-btn" type="button">Add</button>
+                </div>
+            </form>
         </div>
+        <section class="contact-info">
+            <h3 class="contact-heading">Contact information</h3>
+
+            <p class="contact-brief">
+                Do have any questions or just want to say "Hello"? <br>
+                You can reach out to us!
+            </p>
+            <ul class="contact-list">
+                <li class="contact-list-item">Our emails: omarsalem0721@gmail.com - benjmainsemah@gmail.com
+                </li>
+                <li class="contact-list-item">Our phone number: 01099348209</li>
+                <li class="contact-list-item">Our address: Cairo, Egypt - Accra, Ghana
+                </li>
+            </ul>
+
+        </section>
+        <footer>
+            <h4>Copyright: Benjmain & Omar @ 2022</h4>
+        </footer>
     </div>
     <script src="main.js"></script>
 
