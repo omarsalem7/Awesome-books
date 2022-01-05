@@ -2,9 +2,16 @@
   margin: 0;
   padding: 0;
 }
+
 .project-wraper {
   width: 70%;
   margin: 20px auto;
+  padding: 10px;
+  height: 90vh;
+  box-shadow: 2px 3px 25px 1px rgba(0, 0, 0, 0.65);
+  -webkit-box-shadow: 2px 3px 25px 1px rgba(0, 0, 0, 0.65);
+  -moz-box-shadow: 2px 3px 25px 1px rgba(0, 0, 0, 0.65);
+  position: relative;
 }
 
 .navbar {
@@ -18,6 +25,18 @@
   list-style: none;
   display: flex;
   gap: 10px;
+}
+
+.nav-list-item {
+  cursor: pointer;
+}
+
+a:hover {
+  color: chocolate;
+}
+
+a:visited {
+  color: chartreuse;
 }
 
 .line-seperator {
@@ -34,6 +53,8 @@
   width: 80%;
   text-align: center;
   margin: 0 auto;
+  max-height: 70vh;
+  overflow-y: scroll;
 }
 
 hr {
@@ -47,12 +68,16 @@ hr {
   margin: 0 auto;
 }
 
+/* .books-wraper {
+  overflow: scroll;
+} */
+
 .book-item {
   list-style: none;
   display: flex;
   justify-content: space-between;
   margin: 0;
-  padding: 2px 8px;
+  padding: 6px;
 }
 
 .book-item:nth-child(even) {
@@ -128,7 +153,7 @@ hr {
 
 .contact-heading {
   font-weight: 600;
-  font-size: 2em;
+  font-size: 1.8em;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -139,12 +164,16 @@ hr {
 }
 
 .contact-list {
-  padding-left: 70px;
+  text-align: center;
+  list-style: none;
 }
 
 footer {
   border: 2px solid black;
-  padding: 5px 0 5px 10px;
-  width: 100%;
+  padding: 8px 0 8px 3px;
+  width: 96%;
+  margin-top: 30px;
+  position: absolute;
+  bottom: 5px;
+  text-align: center;
 }
-
