@@ -13,6 +13,7 @@
 - JavaScript
 - LocalStorage
 - Linters
+- Es6 modules
 
 
 ## Authors
